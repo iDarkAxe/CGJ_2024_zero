@@ -20,7 +20,7 @@ public class PlayerMovement : MonoBehaviour
     public SpriteRenderer spriteRenderer;
     public CapsuleCollider2D playerCollider;
 
-    private Vector3 velocity = Vector3.zero;
+    public Vector3 velocity = Vector3.zero;
     private float horizontalMovement;
     private float verticalMovement;
 
