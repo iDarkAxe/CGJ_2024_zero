@@ -17,6 +17,7 @@ public class LanternMovement : MonoBehaviour
 
     public SpriteRenderer Graphics; // to show/hide lantern
 
+    public static PlayerMovement instance;
 
     void Start()
     {
@@ -27,7 +28,7 @@ public class LanternMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        isFacingLeft = isFacingLeft;    //TODO : get player's direction
+        isFacingLeft = PlayerMovement.instance.spriteRenderer.flipX;    //TODO : get player's direction
 
         currentTime = Time.time;
         if(currentTime > previousTime+animationSpeed)   // up and down "levitating" movement of lantern
