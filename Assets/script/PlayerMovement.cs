@@ -7,7 +7,7 @@ public class PlayerMovement : MonoBehaviour
     public float jumpForce;
 
     private bool isJumping;
-    private bool isGrounded;
+    public bool isGrounded;
     [HideInInspector]
     public bool isClimbing;
 
@@ -93,5 +93,9 @@ public class PlayerMovement : MonoBehaviour
             spriteRenderer.flipX = true;
         }
     }
-
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(groundCheck.position, groundCheckRadius);
+    }
 }
