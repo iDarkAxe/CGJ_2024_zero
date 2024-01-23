@@ -6,8 +6,11 @@ public class PNJ : MonoBehaviour
     public Text interactText, message1, message2;
     public GameObject dialogueBox;
     public BoxCollider2D reaperCollider;
+    public Animator reaperAnimation;
     private bool isInRange = false;
     private int stateDialogue = 0;
+    public GameObject lantern;
+    public GameObject lanternOnGround;
 
 
     private void Update() {
@@ -16,9 +19,10 @@ public class PNJ : MonoBehaviour
             switch (stateDialogue)
             {
                 case 0:
+                    
                     PlayerMovement.instance.enabled = false;
-                    PlayerMovement.instance.velocity = Vector3.zero;
-                    Time.timeScale = 0;
+                    PlayerMovement.instance.rb.velocity = Vector3.zero;
+                    PlayerMovement.instance.rb.bodyType = RigidbodyType2D.Kinematic;
                     dialogueBox.SetActive(true);
                     stateDialogue = 1;
                     break;
@@ -31,8 +35,10 @@ public class PNJ : MonoBehaviour
                     dialogueBox.SetActive(false);
                     Inventory.instance.collectLantern = true;
                     PlayerMovement.instance.enabled = true;
-                    Time.timeScale = 1;
+                    PlayerMovement.instance.rb.bodyType = RigidbodyType2D.Dynamic;
                     reaperCollider.enabled = false;
+                    lantern.SetActive(true);
+                    Destroy(lanternOnGround);
                     break;
             }
             
@@ -46,6 +52,7 @@ public class PNJ : MonoBehaviour
         {
             interactText.enabled = true;
             isInRange = true;
+            reaperAnimation.SetTrigger("isPlayerNear");
         }
     }
 
@@ -54,6 +61,7 @@ public class PNJ : MonoBehaviour
         {
             interactText.enabled = false;
             isInRange = false;
+            reaperAnimation.SetTrigger("isPlayerFar");
         }
     }
 }
