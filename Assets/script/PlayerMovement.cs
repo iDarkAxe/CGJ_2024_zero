@@ -47,8 +47,9 @@ public class PlayerMovement : MonoBehaviour
             isJumping = true;
         }
 
+        //Flip is there is velocity on the X axis (left-right only)
         Flip(rb.velocity.x);
-
+        
         float characterVelocity = Mathf.Abs(rb.velocity.x);
         animator.SetFloat("Speed", characterVelocity);
         animator.SetBool("isClimbing", isClimbing);
@@ -81,6 +82,7 @@ public class PlayerMovement : MonoBehaviour
         
     }
 
+    //TO DO : changer le flip par la deuxieme animation de mouvement
     void Flip(float _velocity)
     {
         if (_velocity > 0.1f)
