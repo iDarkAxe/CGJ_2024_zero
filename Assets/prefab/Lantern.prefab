@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5435459422794378609}
   - component: {fileID: 7841638314720292215}
   - component: {fileID: 2567744181395081818}
-  - component: {fileID: 5164823256730370259}
+  - component: {fileID: 7602150468283932717}
   m_Layer: 0
   m_Name: Lantern
   m_TagString: Untagged
@@ -29,7 +29,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 3.5, y: 3.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -105,7 +105,7 @@ MonoBehaviour:
   offsetX: 1
   offsetY: 0.8
   Graphics: {fileID: 7841638314720292215}
---- !u!95 &5164823256730370259
+--- !u!95 &7602150468283932717
 Animator:
   serializedVersion: 5
   m_ObjectHideFlags: 0
@@ -115,7 +115,7 @@ Animator:
   m_GameObject: {fileID: 1315358613639457993}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: c8792be1e199e8d4c8025764cf2a823d, type: 2}
+  m_Controller: {fileID: 9100000, guid: 5933c227af8f72f44983e563271e730c, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
