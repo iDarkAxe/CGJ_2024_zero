@@ -134,7 +134,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 250
   climbSpeed: 100
-  jumpForce: 0.04
+  jumpForce: 400
   isGrounded: 0
   isClimbing: 0
   groundCheck: {fileID: 336420454564189769}
