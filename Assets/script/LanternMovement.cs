@@ -3,7 +3,6 @@ using UnityEngine;
 public class LanternMovement : MonoBehaviour
 {
     public bool isFacingLeft = true;
-    public bool isPickedUp = true;  // player should start without it
 
     private bool previousFacingDirection;
     private float currentTime, previousTime;
@@ -22,7 +21,7 @@ public class LanternMovement : MonoBehaviour
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-        transform.parent = player.transform;    // follow player by making latern its child
+        transform.parent = player.transform;        // follow player by making latern its child
         previousFacingDirection = !isFacingLeft;    // init this boolean 
     }
 
@@ -51,12 +50,6 @@ public class LanternMovement : MonoBehaviour
                 transform.position += new Vector3(offsetX, 0);
             }
         previousFacingDirection = isFacingLeft;
-        }
-
-        if(isPickedUp) {    // hide lantern in the beginning, player hasnt picked it up (hhihihih)
-            Graphics.enabled = true;
-        } else {
-            Graphics.enabled = false;
         }
     }
 }
