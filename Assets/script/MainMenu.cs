@@ -11,14 +11,10 @@ public class MainMenu : MonoBehaviour
 
     public void Start(){
         audioSource.clip = clip;
+        audioSource.loop = true;
         audioSource.Play();
     }
-    private void Update() {
-        if (!audioSource.isPlaying)
-        {
-            audioSource.Play();
-        }
-    }
+    
 
     public void StartGame(){
         SceneManager.LoadScene(levelToLoad);
