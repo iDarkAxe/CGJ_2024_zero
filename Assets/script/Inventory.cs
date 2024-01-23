@@ -11,7 +11,6 @@ public class Inventory : MonoBehaviour
 
     private void Awake()
     {
-        Debug.Log("hello la console");
         if(instance != null)
         {
             Debug.LogWarning("Il y a + d'une instance de Inventory dans la scène");
