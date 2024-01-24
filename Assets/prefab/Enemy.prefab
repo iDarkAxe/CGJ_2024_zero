@@ -126,7 +126,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -19.389517, y: 0.5893192, z: 0.014990192}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 4, y: 4, z: 4}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2211619939273110732}
@@ -245,6 +245,7 @@ MonoBehaviour:
   - {fileID: 2222359766244421466}
   - {fileID: 4723991579144437403}
   graphics: {fileID: 2222135212492162684}
+  damageOnCollision: 1
 --- !u!95 &6316565855277847907
 Animator:
   serializedVersion: 5
