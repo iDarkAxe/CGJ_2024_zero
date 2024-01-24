@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,13 +7,12 @@ public class HealthBar : MonoBehaviour
 
     public void SetHealth(int health)
     {
-        if((health < 5) || (health > 0))
+        if(health > 5 || health < 0)
         {
             return;
         }
         for(int i = 0; i < 5; i++)
         {
-            Debug.Log("cc");
             if(i< health)
             {
                 healthBar[i].enabled = true;
