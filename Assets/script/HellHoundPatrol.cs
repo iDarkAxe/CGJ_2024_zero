@@ -9,6 +9,8 @@ public class HellHoundPatrol : MonoBehaviour
     private Transform target;
     private int destPoint = 0;
 
+    public int damageOnCollision;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -29,4 +31,9 @@ public class HellHoundPatrol : MonoBehaviour
             graphics.flipX = !graphics.flipX;
         }
     }
+    private void OnCollisionEnter2D(Collision2D collision){
+        if(collision.transform.CompareTag("Player")){
+            PlayerHealth.instance.TakeDamage(damageOnCollision);
+        } 
+    } 
 }
