@@ -5,6 +5,10 @@ public class Inventory : MonoBehaviour
 {
     public int soulsCount;
     public bool collectLantern = false;
+<<<<<<< HEAD
+    public SoulBar soulbar;
+=======
+>>>>>>> main
     //public Text coinsCountText;
 
     public static Inventory instance;
@@ -22,6 +26,7 @@ public class Inventory : MonoBehaviour
     public void AddSouls(int count)
     {
         soulsCount += count;
+        soulbar.SetSoul(soulsCount);
         //coinsCountText.text = coinsCount.ToString();
     }
 }
