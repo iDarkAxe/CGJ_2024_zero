@@ -4,10 +4,10 @@ public class LanternMovement : MonoBehaviour
 {
     public bool isFacingLeft = true;
 
-    private bool previousFacingDirection;
+    private bool previousFacingDirection = false;
     private float currentTime, previousTime;
     private bool stateAnimation = false;
-    private GameObject player;
+    private Transform player;
 
     public float animationSpeed = 0.7f;
     public float animationAmplitude = 0.015f;
@@ -16,13 +16,12 @@ public class LanternMovement : MonoBehaviour
 
     public SpriteRenderer Graphics; // to show/hide lantern
 
-    public static PlayerMovement instance;
-
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
-        transform.parent = player.transform;        // follow player by making latern its child
-        previousFacingDirection = !isFacingLeft;    // init this boolean 
+        player = PlayerMovement.instance.transform;
+        transform.parent = player;        // follow player by making latern its child
+        isFacingLeft = PlayerMovement.instance.spriteRenderer.flipX;    //TODO : get player's direction
+        FlipLantern();
     }
 
     void FixedUpdate()
@@ -42,14 +41,17 @@ public class LanternMovement : MonoBehaviour
         }
 
         if(isFacingLeft != previousFacingDirection) {   // direction changed, so move lantern
-            transform.position = player.transform.position; // center lantern, then move it
-            transform.position += new Vector3(0, offsetY);
-            if(isFacingLeft) {
-                transform.position += new Vector3(-offsetX, 0);
-            } else {
-                transform.position += new Vector3(offsetX, 0);
-            }
-        previousFacingDirection = isFacingLeft;
+            FlipLantern();
+            previousFacingDirection = isFacingLeft;
+        }
+    }
+    private void FlipLantern(){
+        transform.position = player.position; // center lantern, then move it
+        transform.position += new Vector3(0, offsetY);
+        if(isFacingLeft) {
+            transform.position += new Vector3(-offsetX, 0);
+        } else {
+            transform.position += new Vector3(offsetX, 0);
         }
     }
 }
