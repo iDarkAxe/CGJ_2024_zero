@@ -329,6 +329,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48722e3d6cff9884a8db6d655d8eb4e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  slider: {fileID: 148590011}
+  maxSouls: 10
 --- !u!114 &148590011
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -412,6 +414,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   soulsCount: 0
   collectLantern: 0
+  soulbar: {fileID: 148590010}
 --- !u!4 &174617648
 Transform:
   m_ObjectHideFlags: 0
@@ -439,6 +442,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9902a217ec9dc82479124bbd3c168ad3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PausePanel: {fileID: 1536894735}
+  settingsPanel: {fileID: 495214751}
 --- !u!1 &297598834
 GameObject:
   m_ObjectHideFlags: 0
@@ -700,6 +705,18 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 291884797473976914, guid: ea3b648a65676574b9701c40b1a28bf2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 174617649}
+    - target: {fileID: 291884797473976914, guid: ea3b648a65676574b9701c40b1a28bf2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: CloseSettingsMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 291884797473976914, guid: ea3b648a65676574b9701c40b1a28bf2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PauseMenu, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 541857388632458985, guid: ea3b648a65676574b9701c40b1a28bf2, type: 3}
       propertyPath: m_AnchorMax.x
       value: 1
@@ -934,6 +951,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parallaxFactor: -0.3
+--- !u!1 &495214751 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 291242319344877684, guid: ea3b648a65676574b9701c40b1a28bf2, type: 3}
+  m_PrefabInstance: {fileID: 426589224}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &541708556
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1727,7 +1749,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 666050674}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 174617649}
+        m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
+        m_MethodName: SettingsButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &666050674
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3014,7 +3048,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1442528660}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 174617649}
+        m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
+        m_MethodName: MainMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1442528660
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -125428,7 +125474,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1915484885}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 174617649}
+        m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
+        m_MethodName: Resume
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1915484885
 MonoBehaviour:
   m_ObjectHideFlags: 0
