@@ -45,6 +45,7 @@ GameObject:
   - component: {fileID: 963547842463339178}
   - component: {fileID: 7123660369795052714}
   - component: {fileID: 7399397913140868367}
+  - component: {fileID: 1096332290978177390}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -146,6 +147,7 @@ MonoBehaviour:
   animator: {fileID: 963547842463339178}
   spriteRenderer: {fileID: 4372321160921080072}
   playerCollider: {fileID: 7399397913140868367}
+  velocity: {x: 0, y: 0, z: 0}
 --- !u!95 &963547842463339178
 Animator:
   serializedVersion: 5
@@ -229,3 +231,15 @@ CapsuleCollider2D:
   m_Offset: {x: 0.0033545494, y: -0.092699066}
   m_Size: {x: 0.4243679, y: 1.1031532}
   m_Direction: 0
+--- !u!114 &1096332290978177390
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6971522619194937897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5a30aefc2248ef4dbfd798600f09295, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
