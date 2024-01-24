@@ -5,10 +5,9 @@ public class Inventory : MonoBehaviour
 {
     public int soulsCount;
     public bool collectLantern = false;
-<<<<<<< HEAD
+
     public SoulBar soulbar;
-=======
->>>>>>> main
+
     //public Text coinsCountText;
 
     public static Inventory instance;
