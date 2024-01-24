@@ -4,13 +4,14 @@ using UnityEngine.UI;   // pour accéder au texte
 public class Inventory : MonoBehaviour
 {
     public int soulsCount;
+    public bool collectLantern = false;
+    public SoulBar soulbar;
     //public Text coinsCountText;
 
     public static Inventory instance;
 
     private void Awake()
     {
-        Debug.Log("hello la console");
         if(instance != null)
         {
             Debug.LogWarning("Il y a + d'une instance de Inventory dans la scène");
@@ -22,6 +23,7 @@ public class Inventory : MonoBehaviour
     public void AddSouls(int count)
     {
         soulsCount += count;
+        soulbar.SetSoul(soulsCount);
         //coinsCountText.text = coinsCount.ToString();
     }
 }
